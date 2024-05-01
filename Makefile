@@ -15,17 +15,20 @@ a2version2.tab.c a2version2.tab.h: a2version2.y
 	$(BISON) -d -r all a2version2.y
 
 # Target for compiling the program
-x2021A7PS2571G: extetrickstype.c lex.yy.c a2version2.tab.c
-	$(CC) extetrickstype.c lex.yy.c a2version2.tab.c -o x2021A7PS2571G
+executable: extetrickstype.c lex.yy.c a2version2.tab.c
+	$(CC) extetrickstype.c lex.yy.c a2version2.tab.c -o executable
 
 # Target for running the program with input from testinput
-run: x2021A7PS2571G
-	./x2021A7PS2571G < $(ARGS) 2>error.txt > translated.py
+run: executable
+	./executable < $(ARGS) 2>error.txt > translated.py
+
+# Target for python execution
+execute: run
 	@python3 translated.py
 
 # Clean target
 clean:
-	rm -f lex.yy.c a2version2.tab.c a2version2.tab.h x2021A7PS2571G
+	rm -f lex.yy.c a2version2.tab.c a2version2.tab.h executable
 
 # Phony targets
 .PHONY: run clean

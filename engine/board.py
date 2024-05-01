@@ -55,7 +55,7 @@ class Board(object):
 
 if __name__ == "__main__": # for testing. Requires some tetrominoes in allextetrominoes.py
 	from allextetrominoes import *
-	from shape import Shape
+	from engine.shape import Shape
 	from time import time, sleep
 	this = Board(10,10)
 	this.insertShape(get_any_extetromino(),5,5) # from allextetrominoes

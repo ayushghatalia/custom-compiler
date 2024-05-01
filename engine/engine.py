@@ -16,9 +16,9 @@
 
 import tkinter as tk
 from tkinter import filedialog
-from board import Board
-from allextetrominoes import *
-from shape import Shape
+from engine.board import Board
+from engine.allextetrominoes import *
+from engine.shape import Shape
 from time import time, sleep
 from copy import copy, deepcopy
 
@@ -195,7 +195,7 @@ class TetrisEngine:
 		self.window.config(menu=menu)
 
 		extetris_menu = tk.Menu(menu)
-		menu.add_cascade(label="ExtendedTetricks-Ayush Ghatalia", menu=extetris_menu)
+		menu.add_cascade(label="ExtendedTetricks-Karan Bania", menu=extetris_menu)
 		menu.add_cascade(label=f"Score={self.score}", menu=extetris_menu)
 		extetris_menu.add_command(label="New Game", command=self.new_game)
 		extetris_menu.add_separator()
